@@ -1,13 +1,19 @@
-name: Feature Request
+name: New Feature
 description: Suggest a new feature or improvement for the project
-title: "[Feature]: "
+title: "(SP: ) "
 labels: ["enhancement", "needs-triage"]
 body:
-  - type: markdown
+  - type: dropdown
+    id: priority
     attributes:
-      value: |
-        Thanks for suggesting a new feature!  
-        Please fill in the sections below as clearly as possible.
+      label: Priority
+      description: How important is this feature?
+      options:
+        - 🔴 High – needed urgently
+        - 🟠 Medium – would be very useful
+        - 🟡 Low – nice to have
+    validations:
+      required: true
 
   - type: input
     id: summary
@@ -31,34 +37,6 @@ body:
       label: Proposed Solution
       description: Describe your idea for how the problem should be solved.
       placeholder: "Introduce a dark theme toggle in settings"
-    validations:
-      required: true
-
-  - type: textarea
-    id: alternatives
-    attributes:
-      label: Alternatives Considered
-      description: Have you considered other ways to solve this?
-      placeholder: "Could use browser extensions, but they don't work well with our UI"
-
-  - type: textarea
-    id: benefits
-    attributes:
-      label: Benefits
-      description: What positive impact will this feature have?
-      placeholder: "Improves accessibility and user comfort"
-
-  - type: dropdown
-    id: priority
-    attributes:
-      label: Priority
-      description: How important is this feature?
-      options:
-        - 🔴 High – needed urgently
-        - 🟠 Medium – would be very useful
-        - 🟡 Low – nice to have
-    validations:
-      required: true
 
   - type: textarea
     id: notes
