@@ -1,61 +1,81 @@
-name: General Issue
-description: Report a bug or suggest a new feature
-labels: ["needs-triage"]
+name: Bug Report
+description: Report a problem clearly so the team can reproduce and fix it
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
 body:
-  - type: textarea
-    id: title
+  - type: markdown
     attributes:
-      label: 🧩 Title
-      description: Short and clear description of the issue.
-      placeholder: "Bug: login button not visible on mobile" 
-    validations:
-      required: true
+      value: |
+        Thanks for reporting a problem!  
+        Please fill in the sections below as clearly as possible.
 
-  - type: textarea
-    id: description
+  - type: input
+    id: summary
     attributes:
-      label: 📌 Description
-      description: What is the problem or the task? Describe clearly.
-      placeholder: "The 'Login' button is missing on screens smaller than 768px."
-    validations:
-      required: true
-
-  - type: textarea
-    id: goal
-    attributes:
-      label: 🎯 Goal / Expected Result
-      description: What should be the final outcome?
-      placeholder: "The 'Login' button should always be visible and usable on mobile devices."
-    validations:
-      required: true
+      label: Short Summary
+      description: Briefly describe the problem in one sentence.
+      placeholder: "Example: Login button does not work on mobile"
 
   - type: textarea
     id: steps
     attributes:
-      label: 🔍 Steps to Reproduce (for bugs)
-      description: List steps so anyone can reproduce the issue.
+      label: Steps to Reproduce
+      description: List the exact steps so anyone can repeat the problem.
       placeholder: |
-        1. Go to the home page.
-        2. Resize the screen to 375px width.
-        3. Check if the "Login" button is visible.
-
-  - type: checkboxes
-    id: acceptance
-    attributes:
-      label: ✅ Acceptance Criteria
-      description: Define clear conditions when the issue is done.
-      options:
-        - label: The issue is fixed or the feature is implemented as described.
-        - label: Works across major browsers (Chrome, Firefox, Safari).
-        - label: Tests are added/updated if applicable.
-        - label: Code has passed review.
+        1. Go to the login page
+        2. Enter a valid username and password
+        3. Click the "Login" button
+        4. See the error
+    validations:
+      required: true
 
   - type: textarea
-    id: additional
+    id: expected
     attributes:
-      label: 📂 Additional Info
-      description: Add any extra details.
-      placeholder: |
-        - Screenshots / videos (for bugs)
-        - Design / mockup link (for features)
-        - Dependencies, risks, clarifications
+      label: Expected Behavior
+      description: What did you expect to happen?
+      placeholder: "I expected to be logged in and redirected to the dashboard"
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happened?
+      placeholder: "Nothing happened, the page just refreshed"
+    validations:
+      required: true
+
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: On which system did the problem occur?
+      placeholder: "Browser: Chrome 119 / OS: Windows 10"
+
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: Screenshots / Logs
+      description: If possible, add screenshots or error messages.
+      placeholder: "Drag & drop screenshots or copy error logs here"
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: How much does this problem affect the project?
+      options:
+        - 🔴 Critical – blocks development or release
+        - 🟠 Major – affects main functionality but has a workaround
+        - 🟡 Minor – small issue, cosmetic or low impact
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Additional Notes
+      description: Any other details that might help.
+      placeholder: "Happens only when logged out, maybe related to session handling."
