@@ -1,75 +1,62 @@
-name: Bug Report
-description: Report a problem clearly so the team can reproduce and fix it
-title: "[Bug]: "
-labels: ["bug", "needs-triage"]
+name: Feature Request
+description: Suggest a new feature or improvement for the project
+title: "[Feature]: "
+labels: ["enhancement", "needs-triage"]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for reporting a problem!  
+        Thanks for suggesting a new feature!  
         Please fill in the sections below as clearly as possible.
 
   - type: input
     id: summary
     attributes:
       label: Short Summary
-      description: Briefly describe the problem in one sentence.
-      placeholder: "Example: Login button does not work on mobile"
+      description: Briefly describe the feature in one sentence.
+      placeholder: "Example: Add dark mode option"
 
   - type: textarea
-    id: steps
+    id: problem
     attributes:
-      label: Steps to Reproduce
-      description: List the exact steps so anyone can repeat the problem.
-      placeholder: |
-        1. Go to the login page
-        2. Enter a valid username and password
-        3. Click the "Login" button
-        4. See the error
+      label: Problem to Solve
+      description: What problem or need does this feature address?
+      placeholder: "Users have difficulty reading the interface in low light"
     validations:
       required: true
 
   - type: textarea
-    id: expected
+    id: solution
     attributes:
-      label: Expected Behavior
-      description: What did you expect to happen?
-      placeholder: "I expected to be logged in and redirected to the dashboard"
+      label: Proposed Solution
+      description: Describe your idea for how the problem should be solved.
+      placeholder: "Introduce a dark theme toggle in settings"
     validations:
       required: true
 
   - type: textarea
-    id: actual
+    id: alternatives
     attributes:
-      label: Actual Behavior
-      description: What actually happened?
-      placeholder: "Nothing happened, the page just refreshed"
-    validations:
-      required: true
-
-  - type: input
-    id: environment
-    attributes:
-      label: Environment
-      description: On which system did the problem occur?
-      placeholder: "Browser: Chrome 119 / OS: Windows 10"
+      label: Alternatives Considered
+      description: Have you considered other ways to solve this?
+      placeholder: "Could use browser extensions, but they don't work well with our UI"
 
   - type: textarea
-    id: screenshots
+    id: benefits
     attributes:
-      label: Screenshots / Logs
-      description: If possible, add screenshots or error messages.
-      placeholder: "Drag & drop screenshots or copy error logs here"
+      label: Benefits
+      description: What positive impact will this feature have?
+      placeholder: "Improves accessibility and user comfort"
 
   - type: dropdown
-    id: severity
+    id: priority
     attributes:
-      label: Severity
-      description: How much does this problem affect the project?
+      label: Priority
+      description: How important is this feature?
       options:
-        - 🔴 Critical – blocks development or release
-        - 🟠 Major – affects main functionality but has a workaround
-        - 🟡 Minor – small issue, cosmetic or low impact
+        - 🔴 High – needed urgently
+        - 🟠 Medium – would be very useful
+        - 🟡 Low – nice to have
     validations:
       required: true
 
@@ -77,5 +64,5 @@ body:
     id: notes
     attributes:
       label: Additional Notes
-      description: Any other details that might help.
-      placeholder: "Happens only when logged out, maybe related to session handling."
+      description: Any other details, links, or references.
+      placeholder: "See similar feature in GitHub dark mode"
