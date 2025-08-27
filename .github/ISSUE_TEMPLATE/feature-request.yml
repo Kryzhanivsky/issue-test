@@ -3,31 +3,21 @@ description: Suggest a new feature or improvement for the project
 title: "(SP: ) "
 labels: ["enhancement", "needs-triage"]
 body:
-  - type: dropdown
-    id: priority
-    attributes:
-      label: Priority
-      description: How important is this feature?
-      options:
-        - 🔴 High – needed urgently
-        - 🟠 Medium – would be very useful
-        - 🟡 Low – nice to have
-    validations:
-      required: true
-
-  - type: input
+  - type: textarea
     id: summary
     attributes:
       label: Short Summary
       description: Briefly describe the feature in one sentence.
       placeholder: "Example: Add dark mode option"
+    validations:
+      required: true
 
   - type: textarea
     id: problem
     attributes:
       label: Problem to Solve
       description: What problem or need does this feature address?
-      placeholder: "Users have difficulty reading the interface in low light"
+      placeholder: "Example: Users have difficulty reading the interface in low light"
     validations:
       required: true
 
@@ -36,11 +26,24 @@ body:
     attributes:
       label: Proposed Solution
       description: Describe your idea for how the problem should be solved.
-      placeholder: "Introduce a dark theme toggle in settings"
+      placeholder: "Example: Introduce a dark theme toggle in settings"
 
   - type: textarea
     id: notes
     attributes:
       label: Additional Notes
       description: Any other details, links, or references.
-      placeholder: "See similar feature in GitHub dark mode"
+      placeholder: "Example: See similar feature in GitHub dark mode"
+
+  - type: dropdown
+    id: priority
+    attributes:
+      description: How important is this feature?
+      options:
+        - 🟡 Low – nice to have
+        - 🟠 Medium – would be very useful
+        - 🔴 High – needed urgently
+
+    validations:
+      required: true
+
