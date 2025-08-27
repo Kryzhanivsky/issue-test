@@ -1,36 +1,61 @@
-name: New feature
-description: Suggest or request a new feature
-labels: [ "enhancement" ]
+name: General Issue
+description: Report a bug or suggest a new feature
+labels: ["needs-triage"]
 body:
-  - type: markdown
+  - type: textarea
+    id: title
     attributes:
-      value: |
-        Please fill out the sections below to properly describe the new feature you are suggesting.
+      label: 🧩 Title
+      description: Short and clear description of the issue.
+      placeholder: "Bug: login button not visible on mobile" 
+    validations:
+      required: true
+
   - type: textarea
     id: description
     attributes:
-      label: Describe the feature
-      placeholder: A button in the screen X that allows to do Y
+      label: 📌 Description
+      description: What is the problem or the task? Describe clearly.
+      placeholder: "The 'Login' button is missing on screens smaller than 768px."
     validations:
       required: true
+
   - type: textarea
-    id: rationale
+    id: goal
     attributes:
-      label: It should be implemented because
-      placeholder: It will allow to do Y that is needed for Z
+      label: 🎯 Goal / Expected Result
+      description: What should be the final outcome?
+      placeholder: "The 'Login' button should always be visible and usable on mobile devices."
+    validations:
+      required: true
+
   - type: textarea
-    id: context
+    id: steps
     attributes:
-      label: Additional context
+      label: 🔍 Steps to Reproduce (for bugs)
+      description: List steps so anyone can reproduce the issue.
       placeholder: |
-        Add any other context or screenshots about the feature request here.
-  - type: dropdown
-    id: assign
+        1. Go to the home page.
+        2. Resize the screen to 375px width.
+        3. Check if the "Login" button is visible.
+
+  - type: checkboxes
+    id: acceptance
     attributes:
-      label: "Would you like to work on this issue?"
+      label: ✅ Acceptance Criteria
+      description: Define clear conditions when the issue is done.
       options:
-        - "Yes"
-  - type: markdown
+        - label: The issue is fixed or the feature is implemented as described.
+        - label: Works across major browsers (Chrome, Firefox, Safari).
+        - label: Tests are added/updated if applicable.
+        - label: Code has passed review.
+
+  - type: textarea
+    id: additional
     attributes:
-      value: |
-        Thanks for your suggestion! Let's see together if it can be implemented.
+      label: 📂 Additional Info
+      description: Add any extra details.
+      placeholder: |
+        - Screenshots / videos (for bugs)
+        - Design / mockup link (for features)
+        - Dependencies, risks, clarifications
