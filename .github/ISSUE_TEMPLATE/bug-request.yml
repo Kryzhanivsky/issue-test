@@ -78,21 +78,3 @@ body:
         - Unable to reproduce
     validations:
       required: true
-
-  - type: dropdown
-    id: labels
-    attributes:
-      label: Labels to Add
-      description: Select the most suitable label.
-      multiple: true
-      options:
-        - Bug
-        - Priority: High
-        - Priority: Medium
-        - Priority: Low
-        - Severity: Critical
-        - Severity: Major
-        - Severity: Minor
-        - Type: UI
-        - Type: Functional
-        - Type: API
