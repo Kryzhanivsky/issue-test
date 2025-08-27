@@ -38,7 +38,7 @@ body:
   - type: dropdown
     id: priority
     attributes:
-      label: ""
+      label: Priority:
       description: How important is this feature?
       options:
         - 🟡 Low – nice to have
