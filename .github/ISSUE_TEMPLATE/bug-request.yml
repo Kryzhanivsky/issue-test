@@ -1,37 +1,24 @@
 name: Bug Report
 description: Create a report to help us improve
-title: "[Affected functionality] Clear and concise summary, e.g. \"[Create news] 'Publish' button is not displayed on the 'Preview' page\""
+title: "(SP: ) "
 labels: ["bug"]
 assignees: []
 body:
-  - type: input
-    id: environment
+  - type: textarea
+    id: actual
     attributes:
-      label: Environment
-      description: OS, browser, version, device (for mobile).
-      placeholder: "Windows 10, Chrome 119, iPhone 12"
+      label: Actual Result
+      description: What actually happened (visible, missing, broken, etc.).
+      placeholder: "Button is not displayed. See screenshot below."
     validations:
       required: true
 
-  - type: dropdown
-    id: reproducible
+  - type: textarea
+    id: expected
     attributes:
-      label: Reproducibility
-      description: How often does the bug occur?
-      options:
-        - Always
-        - Sometimes
-        - Rarely
-        - Unable to reproduce
-    validations:
-      required: true
-
-  - type: input
-    id: build
-    attributes:
-      label: Build / Commit
-      description: Link or commit hash where the bug was found.
-      placeholder: "commit 147fa44 from dev branch"
+      label: Expected Result
+      description: What should have happened.
+      placeholder: "Button should be displayed. See mock-up or screenshot."
     validations:
       required: true
 
@@ -56,23 +43,7 @@ body:
         2. Click on "..."
         3. Scroll down to "..."
 
-  - type: textarea
-    id: actual
-    attributes:
-      label: Actual Result
-      description: What actually happened (visible, missing, broken, etc.).
-      placeholder: "Button is not displayed. See screenshot below."
-    validations:
-      required: true
 
-  - type: textarea
-    id: expected
-    attributes:
-      label: Expected Result
-      description: What should have happened.
-      placeholder: "Button should be displayed. See mock-up or screenshot."
-    validations:
-      required: true
 
   - type: textarea
     id: postconditions
@@ -83,29 +54,45 @@ body:
         Example:
         DELETE FROM table1 WHERE id=<item1_id>;
 
-  - type: textarea
-    id: references
-    attributes:
-      label: User Story and Test Case Links
-      description: Links to related user stories, test cases, or documentation.
-      placeholder: |
-        User story #100
-        [Test case](https://jira.softserve.academy/browse/100)
 
-  - type: checkboxes
+  - type: dropdown
+    id: environment
+    attributes:
+      label: Environment
+      description: Client or admin page.
+      options:
+        - Client page
+        - Admin page
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reproducible
+    attributes:
+      label: Reproducibility
+      description: How often does the bug occur?
+      options:
+        - Always
+        - Sometimes
+        - Rarely
+        - Unable to reproduce
+    validations:
+      required: true
+
+  - type: dropdown
     id: labels
     attributes:
       label: Labels to Add
-      description: Select applicable labels.
+      description: Select the most suitable label.
+      multiple: true
       options:
-        - label: "Bug"
-          required: true
-        - label: "Priority: High"
-        - label: "Priority: Medium"
-        - label: "Priority: Low"
-        - label: "Severity: Critical"
-        - label: "Severity: Major"
-        - label: "Severity: Minor"
-        - label: "Type: UI"
-        - label: "Type: Functional"
-        - label: "Type: API"
+        - Bug
+        - Priority: High
+        - Priority: Medium
+        - Priority: Low
+        - Severity: Critical
+        - Severity: Major
+        - Severity: Minor
+        - Type: UI
+        - Type: Functional
+        - Type: API
