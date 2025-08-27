@@ -1,81 +1,111 @@
 name: Bug Report
-description: Report a problem clearly so the team can reproduce and fix it
-title: "[Bug]: "
-labels: ["bug", "needs-triage"]
+description: Create a report to help us improve
+title: "[Affected functionality] Clear and concise summary, e.g. \"[Create news] 'Publish' button is not displayed on the 'Preview' page\""
+labels: ["bug"]
+assignees: []
 body:
-  - type: markdown
+  - type: input
+    id: environment
     attributes:
-      value: |
-        Thanks for reporting a problem!  
-        Please fill in the sections below as clearly as possible.
+      label: Environment
+      description: OS, browser, version, device (for mobile).
+      placeholder: "Windows 10, Chrome 119, iPhone 12"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: reproducible
+    attributes:
+      label: Reproducibility
+      description: How often does the bug occur?
+      options:
+        - Always
+        - Sometimes
+        - Rarely
+        - Unable to reproduce
+    validations:
+      required: true
+
+  - type: input
+    id: build
+    attributes:
+      label: Build / Commit
+      description: Link or commit hash where the bug was found.
+      placeholder: "commit 147fa44 from dev branch"
+    validations:
+      required: true
 
   - type: textarea
-    id: summary
+    id: preconditions
     attributes:
-      label: Short Summary
-      description: Briefly describe the problem in one sentence.
-      placeholder: "Example: Login button does not work on mobile"
+      label: Preconditions
+      description: Actions or setup needed before reproducing the bug.
+      placeholder: |
+        Example:
+        1. Create an item in the database:
+           INSERT INTO table1 (column1, column2)
+           VALUES (value1, value2);
 
   - type: textarea
     id: steps
     attributes:
       label: Steps to Reproduce
-      description: List the exact steps so anyone can repeat the problem.
+      description: Exact steps to reproduce the issue.
       placeholder: |
-        1. Go to the login page
-        2. Enter a valid username and password
-        3. Click the "Login" button
-        4. See the error
+        1. Go to "..."
+        2. Click on "..."
+        3. Scroll down to "..."
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Result
+      description: What actually happened (visible, missing, broken, etc.).
+      placeholder: "Button is not displayed. See screenshot below."
     validations:
       required: true
 
   - type: textarea
     id: expected
     attributes:
-      label: Expected Behavior
-      description: What did you expect to happen?
-      placeholder: "I expected to be logged in and redirected to the dashboard"
+      label: Expected Result
+      description: What should have happened.
+      placeholder: "Button should be displayed. See mock-up or screenshot."
     validations:
       required: true
 
   - type: textarea
-    id: actual
+    id: postconditions
     attributes:
-      label: Actual Behavior
-      description: What actually happened?
-      placeholder: "Nothing happened, the page just refreshed"
-    validations:
-      required: true
-
-  - type: input
-    id: environment
-    attributes:
-      label: Environment
-      description: On which system did the problem occur?
-      placeholder: "Browser: Chrome 119 / OS: Windows 10"
+      label: Postconditions
+      description: Cleanup steps needed after reproducing the bug.
+      placeholder: |
+        Example:
+        DELETE FROM table1 WHERE id=<item1_id>;
 
   - type: textarea
-    id: screenshots
+    id: references
     attributes:
-      label: Screenshots / Logs
-      description: If possible, add screenshots or error messages.
-      placeholder: "Drag & drop screenshots or copy error logs here"
+      label: User Story and Test Case Links
+      description: Links to related user stories, test cases, or documentation.
+      placeholder: |
+        User story #100
+        [Test case](https://jira.softserve.academy/browse/100)
 
-  - type: dropdown
-    id: severity
+  - type: checkboxes
+    id: labels
     attributes:
-      label: Severity
-      description: How much does this problem affect the project?
+      label: Labels to Add
+      description: Select applicable labels.
       options:
-        - 🔴 Critical – blocks development or release
-        - 🟠 Major – affects main functionality but has a workaround
-        - 🟡 Minor – small issue, cosmetic or low impact
-    validations:
-      required: true
-
-  - type: textarea
-    id: notes
-    attributes:
-      label: Additional Notes
-      description: Any other details that might help.
-      placeholder: "Happens only when logged out, maybe related to session handling."
+        - label: "Bug"
+          required: true
+        - label: "Priority: High"
+        - label: "Priority: Medium"
+        - label: "Priority: Low"
+        - label: "Severity: Critical"
+        - label: "Severity: Major"
+        - label: "Severity: Minor"
+        - label: "Type: UI"
+        - label: "Type: Functional"
+        - label: "Type: API"
