@@ -1,15 +1,17 @@
 ---
 name: Feature / Task
 about: Suggest a new feature, improvement, or general task
-title: "(SP: ) "
+title: '(SP: ) '
 labels: enhancement
 ---
 
 ## Description
+
 <!-- What should be done and why -->
 <!-- Example: "Allow users to upload an avatar to personalize their profile." -->
 
 ## Steps
+
 <!-- OPTIONAL -->
 <!-- Suggested steps to complete the task -->
 <!-- Example:
@@ -20,9 +22,10 @@ labels: enhancement
 -->
 
 ## Expected Result
+
 <!-- What should be achieved -->
 <!-- Example: "User can upload and see their avatar in profile and comments." -->
 
 ## Extra
-<!-- Links, designs, screenshots, or other helpful info -->
-<!-- Example: "Attach Figma link or example screenshot." -->
+
+<!-- Links (design forbidden), screenshots, or other helpful info -->
