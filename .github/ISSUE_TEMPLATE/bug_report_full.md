@@ -1,30 +1,35 @@
 ---
 name: Bug Report
-about: Detailed bug report template
-title: "[Feature] Short summary"
+about: Create a detailed bug report to help us improve
+title: "[Feature/Module] Short summary of the bug"
 labels: bug
 assignees: ''
 ---
 
-## Environment
-<!-- OS, browser (with version), device if mobile -->
-<!-- Example: Windows 11, Chrome 117 -->
+Environment: 
+<!-- OS, browser (with version), device (if mobile) -->
+<!-- Example: Windows 11, Chrome 117, Pixel 6 Android 13 -->
 
-## Reproducibility
+Reproducibility: 
 <!-- always / sometimes / rarely -->
 
-## Build
-<!-- Commit hash or version -->
-<!-- Example: commit 147fa44 -->
+Build: 
+<!-- Commit hash or version where bug was found -->
+<!-- Example: commit 147fa44 from dev branch -->
+
+---
 
 ## Preconditions (if any)
-<!-- Setup needed before reproducing -->
-<!-- Example: "User is logged in with a valid account" -->
+<!-- Setup required before reproducing -->
+<!-- Example: User created in DB, logged in with valid credentials -->
 
 ## Steps to Reproduce
+<!-- Step-by-step actions -->
 1. ...
 2. ...
 3. ...
+
+---
 
 ## Actual Result
 <!-- What happened -->
@@ -34,6 +39,25 @@ assignees: ''
 ## Expected Result
 <!-- What should happen -->
 <!-- Example: "Publish button should be visible on Preview page" -->
+<!-- Attach mockups/designs if available -->
 
-## References (optional)
-<!-- Related story, test case, or task -->
+---
+
+## Postconditions (if any)
+<!-- Cleanup needed after reproducing -->
+<!-- Example: Delete created test data from DB -->
+
+---
+
+## References
+<!-- Related user story, test case, or task -->
+<!-- Example: User story #100, [Test case](https://jira.softserve.academy/browse/100) -->
+
+---
+
+## Labels
+<!-- Add applicable labels:
+- Priority: pri:high / pri:medium / pri:low
+- Severity: severity:blocker / severity:critical / severity:minor
+- Type: UI / Functional / API / Performance
+-->
